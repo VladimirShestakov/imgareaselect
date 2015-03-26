@@ -136,7 +136,7 @@ $.imgAreaSelect = function (img, options) {
      * @return Viewport X
      */
     function viewX(x) {
-        return x + imgOfs.left - parOfs.left;
+        return x + imgOfs.left - parOfs.left - document.body.scrollLeft;
     }
 
     /**
@@ -147,7 +147,7 @@ $.imgAreaSelect = function (img, options) {
      * @return Viewport Y
      */
     function viewY(y) {
-        return y + imgOfs.top - parOfs.top;
+        return y + imgOfs.top - parOfs.top - document.body.scrollTop;
     }
 
     /*
@@ -162,7 +162,7 @@ $.imgAreaSelect = function (img, options) {
      * @return Selection X
      */
     function selX(x) {
-        return x - imgOfs.left + parOfs.left;
+        return x - imgOfs.left + parOfs.left + document.body.scrollLeft;
     }
 
     /**
@@ -173,7 +173,7 @@ $.imgAreaSelect = function (img, options) {
      * @return Selection Y
      */
     function selY(y) {
-        return y - imgOfs.top + parOfs.top;
+        return y - imgOfs.top + parOfs.top + document.body.scrollTop;
     }
     
     /*
@@ -189,7 +189,7 @@ $.imgAreaSelect = function (img, options) {
      * @return Viewport X
      */
     function evX(event) {
-        return event.pageX - parOfs.left;
+        return event.pageX - parOfs.left - document.body.scrollLeft;
     }
 
     /**
@@ -200,7 +200,7 @@ $.imgAreaSelect = function (img, options) {
      * @return Viewport Y
      */
     function evY(event) {
-        return event.pageY - parOfs.top;
+        return event.pageY - parOfs.top - document.body.scrollTop;
     }
 
     /**
